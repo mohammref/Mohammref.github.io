@@ -1,0 +1,81 @@
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .header {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        .header a {
+            text-decoration: none;
+            color: white;
+            margin: 0 10px;
+        }
+        .header a:hover {
+            color: lime;
+        }
+        .main {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 10px;
+            padding: 20px;
+        }
+        .main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .main .center {
+            background-color: #00ff00;
+            color: black;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .main .center h1 {
+            margin-bottom: 10px;
+        }
+        .main .center p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>MOHAMED REFAAT</h1>
+        <div class="nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Resume</a>
+            <a href="#">Services</a>
+            <a href="#">Skills</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <div class="main">
+        <img src="notebook.jpg" alt="Notebook">
+        <img src="workspace.jpg" alt="Workspace">
+        <img src="plant.jpg" alt="Plant">
+        <div class="center">
+            <h1>this is sub title</h1>
+            <p>I design & develop experiences that make people's lives simple.</p>
+        </div>
+        <img src="mobile.jpg" alt="Mobile">
+        <img src="laptop.jpg" alt="Laptop">
+    </div>
+</body>
+</html>

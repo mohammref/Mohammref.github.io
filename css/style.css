@@ -9651,6 +9651,28 @@ textarea.form-control {
   animation: loader-dash 1.5s ease-in-out infinite;
   stroke-linecap: round; }
 
+.modal-dialog {
+  max-width: 800px;
+}
+
+.modal-body {
+  padding: 15px;
+}
+
+@media (max-width: 768px) {
+  .modal-dialog {
+    width: 100%;
+    margin: 0;
+  }
+
+  .modal-content {
+    border: 0;
+    border-radius: 0;
+  }
+}
+
+
+
 @-webkit-keyframes loader-rotate {
   100% {
     -webkit-transform: rotate(360deg);
