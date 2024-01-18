@@ -9652,20 +9652,29 @@ textarea.form-control {
   stroke-linecap: round; }
 
 .modal-dialog {
+  background-color: black;
   max-width: 800px;
 }
 
 .modal-body {
+  background-color: black;
   padding: 15px;
+}
+.modal-header {
+  background-color: black;
+}
+#videoModal {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 768px) {
-  .modal-dialog {
+  .modal-dialog {  
     width: 100%;
     margin: 0;
   }
 
   .modal-content {
+    background-color: black;
     border: 0;
     border-radius: 0;
   }
