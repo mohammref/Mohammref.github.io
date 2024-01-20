@@ -9679,7 +9679,17 @@ textarea.form-control {
     border-radius: 0;
   }
 }
-
+@media (max-width: 767.98px) {
+  #homeSlider {
+    height: 100vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  #homeSlider .slider-item {
+    height: 100vh;
+  }
+}
 
 
 @-webkit-keyframes loader-rotate {
