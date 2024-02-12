@@ -120,7 +120,7 @@
                     (0, b.default)(w, j.once);
                   }, 99)
                 ),
-                document.addEventListener("DOMNodeRemoved", function (e) {
+                document.addEventListener("MutationObserver", function (e) {
                   var t = e.target;
                   t &&
                     1 === t.nodeType &&
