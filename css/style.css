@@ -12353,6 +12353,8 @@ textarea.form-control {
   opacity: 0.5;
 }
 
+
+
 .tagcloud a {
   text-transform: uppercase;
   display: inline-block;
@@ -12505,6 +12507,7 @@ textarea.form-control {
   font-style: italic;
 }
 
+
 #ftco-loader {
   position: fixed;
   width: 96px;
@@ -12568,6 +12571,8 @@ textarea.form-control {
   animation: loader-dash 1.5s ease-in-out infinite;
   stroke-linecap: round;
 }
+
+
 
 .modal-dialog {
   background-color: black;
@@ -12651,4 +12656,6 @@ textarea.form-control {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px;
   }
+
+
 }
