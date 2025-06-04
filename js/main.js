@@ -25,6 +25,18 @@ AOS.init({
   fullHeight();
 
   // loader
+  fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+      const itemsContainer = document.getElementById('items-container');
+      data.items.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.innerHTML = `<h3>${item.title}</h3><p>${item.description}</p>`;
+        itemsContainer.appendChild(itemElement);
+      });
+    })
+    .catch(error => console.error('Error fetching data:', error));
+
   var loader = function () {
     setTimeout(function () {
       if ($("#ftco-loader").length > 0) {
