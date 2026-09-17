@@ -738,37 +738,48 @@
 
       <div class="row no-gutters block-9">
         <div class="col-md-6 order-md-last d-flex">
-          <form action="#" class="bg-light p-4 p-md-5 contact-form">
+          <form id="contactForm" class="bg-light p-4 p-md-5 contact-form">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Name" />
+              <input
+                type="text"
+                name="name"
+                class="form-control"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                placeholder="Your Email"
+                required
+              />
             </div>
             <div class="form-group">
               <input
                 type="text"
+                name="subject"
                 class="form-control"
-                placeholder="Your Email"
+                placeholder="Subject"
+                required
               />
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Subject" />
-            </div>
-            <div class="form-group">
               <textarea
-                name=""
-                id=""
+                name="message"
                 cols="30"
                 rows="7"
                 class="form-control"
                 placeholder="Message"
+                required
               ></textarea>
             </div>
             <div class="form-group">
-              <a
-                href="https://wa.me/201118996898?text=Hello,%20I%20would%20like%20to%20hire%20you%20for%20my%20project."
-                target="_blank"
-                class="btn btn-primary py-3 px-5"
-                >Hire me</a
-              >
+              <button type="submit" class="btn btn-primary py-3 px-5">
+                Send via WhatsApp
+              </button>
             </div>
           </form>
         </div>
@@ -1003,6 +1014,25 @@
 
     <script src="js/main.js"></script>
     <script src="js/Popup.js"></script>
+    <script>
+      // Contact form hands off to WhatsApp - no backend, no silent drops.
+      document.getElementById("contactForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        var f = e.target;
+        var text =
+          "Hi Mohamed, I'm " + f.name.value + " (" + f.email.value + ").
+
+" +
+          "Subject: " + f.subject.value + "
+
+" + f.message.value;
+        window.open(
+          "https://wa.me/201118996898?text=" + encodeURIComponent(text),
+          "_blank",
+          "noopener"
+        );
+      });
+    </script>
 
     <div
       class="modal fade"
