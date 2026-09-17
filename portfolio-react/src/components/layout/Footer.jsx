@@ -58,7 +58,6 @@ const Footer = () => {
 
                 <div className="footer-bottom">
                     <p>© {new Date().getFullYear()} {personal.name}. All rights reserved.</p>
-                    <p className="made-with">Made with React & ❤️</p>
                 </div>
             </div>
         </footer>

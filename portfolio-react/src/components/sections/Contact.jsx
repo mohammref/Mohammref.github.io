@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import emailjs from '@emailjs/browser'
 import { BiMap, BiPhone, BiEnvelope } from 'react-icons/bi'
 import { portfolioData } from '../../data/portfolio-data'
 import './Contact.css'
@@ -13,50 +12,22 @@ const Contact = () => {
         subject: '',
         message: '',
     })
-    const [sending, setSending] = useState(false)
     const [status, setStatus] = useState({ type: '', message: '' })
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
-        setSending(true)
-        setStatus({ type: '', message: '' })
+        const { name, email, subject, message } = formData
+        const text = `Hi Mohamed, I'm ${name} (${email}).
 
-        // EmailJS configuration - You'll need to set these up at emailjs.com
-        // For now, this will show a success message without actually sending
-        try {
-            // Uncomment and configure when you set up EmailJS:
-            // await emailjs.send(
-            //   'YOUR_SERVICE_ID',
-            //   'YOUR_TEMPLATE_ID',
-            //   {
-            //     from_name: formData.name,
-            //     from_email: formData.email,
-            //     subject: formData.subject,
-            //     message: formData.message,
-            //   },
-            //   'YOUR_PUBLIC_KEY'
-            // )
+Subject: ${subject}
 
-            // Simulating email send for demo
-            await new Promise((resolve) => setTimeout(resolve, 1500))
-
-            setStatus({
-                type: 'success',
-                message: 'Message sent successfully! I\'ll get back to you soon.',
-            })
-            setFormData({ name: '', email: '', subject: '', message: '' })
-        } catch (error) {
-            setStatus({
-                type: 'error',
-                message: 'Failed to send message. Please try WhatsApp instead.',
-            })
-        } finally {
-            setSending(false)
-        }
+${message}`
+        window.open(`${social.whatsapp}?text=${encodeURIComponent(text)}`, '_blank', 'noopener')
+        setStatus({ type: 'success', message: 'Opening WhatsApp with your message. If nothing happens, allow pop-ups.' })
     }
 
     return (
@@ -70,7 +41,7 @@ const Contact = () => {
                 >
                     <h2>Contact Me</h2>
                     <p className="section-subtitle">
-                        Hi, I'm Mohamed Refaat from Dubai. I create immersive and interactive experiences
+                        Hi, I'm Mohamed Refaat from Cairo. I create immersive and interactive experiences
                         using VR, AR, and MR technologies. Let's discuss your XR project!
                     </p>
                 </motion.div>
@@ -174,8 +145,8 @@ const Contact = () => {
                                 </div>
                             )}
 
-                            <button type="submit" className="btn btn-primary" disabled={sending}>
-                                {sending ? 'Sending...' : 'Send Message'}
+                            <button type="submit" className="btn btn-primary">
+                                Send via WhatsApp
                             </button>
 
                             <p className="or-text">Or contact me directly via:</p>

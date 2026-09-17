@@ -95,10 +95,6 @@
     margin: 5px 0;
 }
 
-.made-with {
-    font-size: 13px;
-}
-
 @media (max-width: 968px) {
     .footer-content {
         grid-template-columns: 1fr;
